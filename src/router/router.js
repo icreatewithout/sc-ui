@@ -54,6 +54,11 @@ const routes = [
                         name: 'Zipkin',
                         component: () => import('@components/monitor/zipkin/Zipkin.vue'),
                     },
+                    {
+                        path: '/online',
+                        name: 'Online',
+                        component: () => import('@components/monitor/zipkin/Zipkin.vue'),
+                    },
                 ]
             },
             {

@@ -19,6 +19,7 @@ export const resetPass = '/user/user/reset/'
 export const getUserByToken = '/user/user/by/token'
 export const updateAvatar = '/user/user/update/avatar/'
 export const changePass = '/user/user/change/passwd'
+export const online = '/user/user/online'
 //角色资源
 export const roles = '/user/role/list'
 export const allRoles = '/user/role/all'
@@ -40,9 +41,9 @@ export const getLog = '/user/log/'
 //上传
 export const upload = '/api/file/upload'
 //admin server
-export const admin = 'http://192.168.3.122:8670'
+export const admin = '/api/admin'
 //zipkin
-export const zipkin = '/api/admin'
+export const zipkin = import.meta.env.VITE_ZIP_KIN
 
 
 
