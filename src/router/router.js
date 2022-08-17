@@ -65,7 +65,8 @@ const routes = [
                 path: '/center',
                 name: 'Center',
                 component: () => import('@components/system/System.vue'),
-            }
+            },
+
         ]
     },
     {
@@ -73,6 +74,11 @@ const routes = [
         name: 'Login',
         component: () => import('@components/login/Login.vue'),
     },
+    {
+        path: '/404',
+        name: 'NotFound',
+        component: () => import('@components/404/NotFound.vue'),
+    }
 ]
 
 const router = createRouter({
@@ -84,7 +90,11 @@ router.beforeEach((to, from, next) => {
     if (!store.getters.auth && to.path !== '/login') {
         next({path: '/login'})
     } else {
-        next()
+        if (to.matched.length < 1) {
+            next({path: '/404'})
+        }else {
+            next()
+        }
     }
 })
 
